@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.ref.moremorelang.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "moremorelang.refmap.json",
+  "plugin": "com.ref.moremorelang.mixin.MoremorelangMixinConfigPlugin",
+  "mixins": [
+  ],
+  "client": [
+    "TranslatableContentsMixin",
+    "emi.FluidEmiStackMixin",
+    "jei.FluidHelperMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
