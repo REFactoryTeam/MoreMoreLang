@@ -15,12 +15,13 @@ This mod is essential for players who frequently interact with multi-lingual com
 ## 🚀 Key Features
 
 *   **Multi-Language Display:** Configure and display the translated names for items in *any number* of languages simultaneously.
-*   **Arbitrary Selection:** You are not limited to just one secondary language; select the specific language codes you want to see (e.g., both `es_es` and `zh_cn`).
-*   **Seamless Integration:** The localized names are cleanly displayed beneath the standard name in the item's tooltip.
-*   **Jade Compatibility:** Full and robust compatibility with the [Jade](https://github.com/Snownee/Jade) mod, ensuring that the localized names appear correctly within the advanced tooltip interface.
+*   **Arbitrary Selection:** You are not limited to just one secondary language; select the specific language codes you want to see (e.g., both `en_us` and `zh_cn`).
+*   **Jade Compatibility:** Full and robust compatibility with the [Jade](https://github.com/Snownee/Jade) mod.
 *   **Lightweight:** Designed to be highly performant with minimal impact on game load times.
 
 ## ⚙️ Configuration
+
+**Please note:** You need to press `F3 + H` to enable the in-game Advanced Tooltips for the additional languages to be displayed.
 
 The list of languages to display is set via the mod's configuration file, typically found at `config/MoreMoreLang.toml`
 
