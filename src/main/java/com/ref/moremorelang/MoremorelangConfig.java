@@ -49,11 +49,13 @@ public class MoremorelangConfig {
 
   @SubscribeEvent
   static void onConfigLoad(final ModConfigEvent.Loading event) {
+    if (event.getConfig().getSpec() != SPEC) return;
     useMixinTranslator = IS_MIXIN.get();
   }
 
   @SubscribeEvent
   static void onConfigUpdate(final ModConfigEvent event) {
+    if (event.getConfig().getSpec() != SPEC) return;
     moreLanguages = MORE_LANGUAGES.get();
   }
 
