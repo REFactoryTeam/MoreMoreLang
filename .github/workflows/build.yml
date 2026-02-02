@@ -3,7 +3,7 @@ name: Release Mod
 on:
   push:
     branches:
-      - main
+      - 1.20.1
 
 jobs:
   build-and-release:
