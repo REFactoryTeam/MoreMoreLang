@@ -16,8 +16,14 @@ import snownee.jade.api.config.IPluginConfig;
 public enum MoremorelangProvider implements IBlockComponentProvider, IEntityComponentProvider {
   INSTANCE;
 
+  public final ResourceLocation ID =
+      ResourceLocation.fromNamespaceAndPath(Moremorelang.MOD_ID, "moremorelang_provider");
+
   @Override
   public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
+    if (MoremorelangConfig.shouldHide(config.getEnum(this.ID))) {
+      return;
+    }
     Component translator = accessor.getBlock().getName();
     if (Moremorelang.IS_AE2_LOADED) {
       Component ae2Name = IPartHost_Name(accessor);
@@ -44,6 +50,9 @@ public enum MoremorelangProvider implements IBlockComponentProvider, IEntityComp
 
   @Override
   public void appendTooltip(ITooltip tooltip, EntityAccessor accessor, IPluginConfig config) {
+    if (MoremorelangConfig.shouldHide(config.getEnum(this.ID))) {
+      return;
+    }
     if (accessor.getEntity() instanceof Player) {
       return;
     }
@@ -60,6 +69,10 @@ public enum MoremorelangProvider implements IBlockComponentProvider, IEntityComp
 
   @Override
   public ResourceLocation getUid() {
-    return ResourceLocation.fromNamespaceAndPath(Moremorelang.MOD_ID, "moremorelang_provider");
+    return this.ID;
+  }
+
+  public boolean isRequired() {
+    return true;
   }
 }

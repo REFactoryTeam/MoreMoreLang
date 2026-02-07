@@ -20,7 +20,7 @@ import net.minecraftforge.fml.common.Mod;
 public class MoremorelangClientForgeEvent {
   @SubscribeEvent
   public static void onItemTooltip(ItemTooltipEvent event) {
-    if (!event.getFlags().isAdvanced()) {
+    if (MoremorelangConfig.shouldHide(event.getFlags().isAdvanced())) {
       return;
     }
     ItemStack stack = event.getItemStack();
