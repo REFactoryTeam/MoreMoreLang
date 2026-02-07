@@ -1,3 +1,7 @@
 {
-  "config.jade.plugin_moremorelang.moremorelang_provider":"显示更多语言"
+  "config.jade.plugin_moremorelang.moremorelang_provider":"显示更多语言",
+  "config.jade.plugin_moremorelang.moremorelang_provider_always":"始终",
+  "config.jade.plugin_moremorelang.moremorelang_provider_only_shift":"SHIFT",
+  "config.jade.plugin_moremorelang.moremorelang_provider_only_advanced":"高级物品信息提示",
+  "config.jade.plugin_moremorelang.moremorelang_provider_shift_and_advanced":"SHIFT + 高级物品信息提示"
 }

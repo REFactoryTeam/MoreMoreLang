@@ -5,6 +5,7 @@ import com.ref.moremorelang.lang.ComponentTranslator;
 import dev.emi.emi.api.render.EmiTooltipComponents;
 import dev.emi.emi.api.stack.FluidEmiStack;
 import java.util.List;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraftforge.api.distmarker.Dist;
@@ -35,6 +36,9 @@ public abstract class FluidEmiStackMixin {
       require = 0)
   private void addFluidTooltip(
       CallbackInfoReturnable<List<ClientTooltipComponent>> cir, List<ClientTooltipComponent> list) {
+    if (MoremorelangConfig.shouldHide(Minecraft.getInstance().options.advancedItemTooltips)) {
+      return;
+    }
     for (String langCode : MoremorelangConfig.moreLanguages) {
       list.add(
           EmiTooltipComponents.of(

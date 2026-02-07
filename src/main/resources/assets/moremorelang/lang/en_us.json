@@ -1,3 +1,7 @@
 {
-  "config.jade.plugin_moremorelang.moremorelang_provider": "More Lang Display"
+  "config.jade.plugin_moremorelang.moremorelang_provider": "More Lang Display",
+  "config.jade.plugin_moremorelang.moremorelang_provider_always":"Always",
+  "config.jade.plugin_moremorelang.moremorelang_provider_only_shift":"SHIFT",
+  "config.jade.plugin_moremorelang.moremorelang_provider_only_advanced":"Advanced Tooltips",
+  "config.jade.plugin_moremorelang.moremorelang_provider_shift_and_advanced":"SHIFT + Advanced Tooltips"
 }

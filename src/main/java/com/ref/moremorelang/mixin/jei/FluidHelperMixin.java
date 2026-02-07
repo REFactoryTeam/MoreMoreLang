@@ -30,11 +30,12 @@ public abstract class FluidHelperMixin {
       require = 0)
   private void FluidTooltips(
       ITooltipBuilder tooltip, FluidStack ingredient, TooltipFlag tooltipFlag, CallbackInfo ci) {
-    if (tooltipFlag.isAdvanced()) {
-      for (String langCode : MoremorelangConfig.moreLanguages) {
-        tooltip.add(
-            ComponentTranslator.translateComponent(this.getDisplayName(ingredient), langCode));
-      }
+    if (MoremorelangConfig.shouldHide(tooltipFlag.isAdvanced())) {
+      return;
+    }
+    for (String langCode : MoremorelangConfig.moreLanguages) {
+      tooltip.add(
+          ComponentTranslator.translateComponent(this.getDisplayName(ingredient), langCode));
     }
   }
 }
