@@ -25,8 +25,14 @@ public class MoremorelangClientForgeEvent {
     }
     ItemStack stack = event.getItemStack();
     List<Component> tooltips = event.getToolTip();
+    int index = 0;
     for (String langCode : MoremorelangConfig.moreLanguages) {
-      tooltips.add(ComponentTranslator.translateComponent(stack.getHoverName(), langCode));
+      Component translated = ComponentTranslator.translateComponent(stack.getHoverName(), langCode);
+      if (MoremorelangConfig.tryTopPriority && !tooltips.isEmpty()) {
+        tooltips.add(index++, translated);
+      } else {
+        tooltips.add(translated);
+      }
     }
   }
 }

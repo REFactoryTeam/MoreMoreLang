@@ -32,6 +32,13 @@ public class MoremorelangConfig {
           .comment("When to show: ALWAYS, ONLY_SHIFT, ONLY_ADVANCED, SHIFT_AND_ADVANCED")
           .defineEnum("DisplayMode", DisplayMode.ONLY_ADVANCED);
 
+  private static final ForgeConfigSpec.BooleanValue TRY_TOP_PRIORITY =
+      BUILDER
+          .comment(
+              "Try to add translations at the top of the tooltip (just below the item name). "
+                  + "This is a 'best effort' and may be overridden by other mods.")
+          .define("TryTopPriority", false);
+
   static final ForgeConfigSpec SPEC = BUILDER.build();
 
   public static List<? extends String> moreLanguages;
@@ -41,6 +48,8 @@ public class MoremorelangConfig {
   public static boolean resourcesLoaded;
 
   public static DisplayMode displayMode;
+
+  public static boolean tryTopPriority;
 
   private static boolean validateLanguageCode(final Object obj) {
     if (!(obj instanceof final String langCode) || langCode.isBlank()) {
@@ -90,6 +99,7 @@ public class MoremorelangConfig {
     if (event.getConfig().getSpec() != SPEC) return;
     moreLanguages = MORE_LANGUAGES.get();
     displayMode = DISPLAY_MODE.get();
+    tryTopPriority = TRY_TOP_PRIORITY.get();
   }
 
   @SubscribeEvent
