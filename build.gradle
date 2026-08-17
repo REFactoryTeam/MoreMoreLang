@@ -210,9 +210,7 @@ dependencies {
 	implementation fg.deobf("curse.maven:guideme-1173950:7127447")
 	implementation fg.deobf("curse.maven:applied-energistics-2-223794:7148487")
 
-	implementation fg.deobf("curse.maven:gregtechceu-modern-890405:7424649")
-
-	implementation fg.deobf("curse.maven:jei-238222:7391695")
+	implementation fg.deobf("curse.maven:jei-238222:8622780")
 	compileOnly fg.deobf("curse.maven:emi-580555:6420945")
 
 	runtimeOnly fg.deobf("curse.maven:modern-ui-352491:5977000")

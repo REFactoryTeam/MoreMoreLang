@@ -2,7 +2,7 @@ package com.ref.moremorelang.mixin.jei;
 
 import com.ref.moremorelang.MoremorelangConfig;
 import com.ref.moremorelang.lang.ComponentTranslator;
-import mezz.jei.api.gui.builder.ITooltipBuilder;
+import java.util.List;
 import mezz.jei.forge.platform.FluidHelper;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.TooltipFlag;
@@ -24,12 +24,12 @@ public abstract class FluidHelperMixin {
 
   @Inject(
       method =
-          "getTooltip(Lmezz/jei/api/gui/builder/ITooltipBuilder;Lnet/minecraftforge/fluids/FluidStack;Lnet/minecraft/world/item/TooltipFlag;)V",
+          "getTooltip(Ljava/util/List;Lnet/minecraftforge/fluids/FluidStack;Lnet/minecraft/world/item/TooltipFlag;)V",
       at = @At("TAIL"),
       remap = false,
       require = 0)
   private void FluidTooltips(
-      ITooltipBuilder tooltip, FluidStack ingredient, TooltipFlag tooltipFlag, CallbackInfo ci) {
+      List<Component> tooltip, FluidStack ingredient, TooltipFlag tooltipFlag, CallbackInfo ci) {
     if (MoremorelangConfig.shouldHide(tooltipFlag.isAdvanced())) {
       return;
     }
